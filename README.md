@@ -71,7 +71,7 @@ Puedes ejecutar este análisis de las siguientes formas:
 1. Clona este repositorio:
 
 ```
-git clone https://github.com/tu-usuario/tu-repo.git
+git clone https://github.com/martinatn95-wq/conectatel-analysis
 ```
 
 
