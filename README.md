@@ -1,6 +1,6 @@
-# 📊 Análisis de Comportamiento de Usuarios (EDA)
+# Análisis de Comportamiento de Usuarios (EDA)
 
-## 🎯 Objetivo del proyecto
+## Objetivo del proyecto
 
 El objetivo de este proyecto es analizar el comportamiento de usuarios a partir de un dataset de eventos, identificando patrones de interacción, engagement y posibles problemas en la calidad de los datos.
 
@@ -13,7 +13,7 @@ Se busca:
 
 ---
 
-## 📁 Datasets utilizados
+##  Datasets utilizados
 
 El análisis se basa en datasets simulados de actividad de usuarios, que incluyen las siguientes variables principales:
 
@@ -27,7 +27,7 @@ El análisis se basa en datasets simulados de actividad de usuarios, que incluye
 
 ---
 
-## 🔍 Etapas del análisis
+##  Etapas del análisis
 
 ### 1. Exploración inicial (EDA)
 
@@ -77,7 +77,7 @@ git clone https://github.com/martinatn95-wq/conectatel-analysis
 
 ---
 
-## 🚀 Resultados clave
+##  Resultados clave
 
 * Identificación de datos inconsistentes (valores 0 y -999)
 * Presencia de outliers significativos en duración y longitud
@@ -86,7 +86,7 @@ git clone https://github.com/martinatn95-wq/conectatel-analysis
 
 ---
 
-## 🧠 Habilidades demostradas
+##  Habilidades demostradas
 
 * Limpieza y preprocesamiento de datos
 * Análisis exploratorio (EDA)
@@ -96,7 +96,7 @@ git clone https://github.com/martinatn95-wq/conectatel-analysis
 
 ---
 
-## 📌 Notas
+##  Notas
 
 Este proyecto forma parte de un portafolio enfocado en análisis de datos y está diseñado para simular un caso real de negocio.
 
