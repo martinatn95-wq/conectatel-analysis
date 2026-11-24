@@ -1,103 +1,52 @@
-# Análisis de Comportamiento de Usuarios (EDA)
+# ConnectaTel | Análisis y segmentación de usuarios
 
-## Objetivo del proyecto
+**Proyecto académico de Data Analytics (TripleTen)** · Python, pandas, Seaborn y Matplotlib
 
-El objetivo de este proyecto es analizar el comportamiento de usuarios a partir de un dataset de eventos, identificando patrones de interacción, engagement y posibles problemas en la calidad de los datos.
+## Objetivo
+Analizar el uso de servicios de una empresa simulada de telecomunicaciones en Latinoamérica, evaluar la calidad de los datos, encontrar valores atípicos y construir perfiles de consumo por usuario, edad y tipo de plan.
 
-Se busca:
+## Datos
+El notebook utiliza tres archivos:
+- `plans.csv`: condiciones de los planes Básico y Premium.
+- `users_latam.csv`: perfiles, edades, ciudades, planes y fechas de registro de los usuarios.
+- `usage.csv`: registros de llamadas y mensajes.
 
-* Entender la frecuencia de uso por usuario
-* Analizar la duración de eventos y nivel de interacción
-* Detectar inconsistencias en los datos
-* Generar insights útiles para la toma de decisiones
+Los archivos de entrada **no están publicados** aquí y el notebook utiliza rutas `/datasets/` del entorno académico.
 
----
+## Metodología y herramientas
+1. Exploración de estructura, nulos, duplicados y valores inválidos.
+2. Tratamiento de edades inválidas y fechas inconsistentes.
+3. Creación de indicadores de mensajes, llamadas y minutos por usuario mediante `groupby` y `merge`.
+4. Histogramas y diagramas de caja para comparar planes y distribuciones.
+5. Detección de outliers con el método IQR y segmentación por edad y nivel de uso.
+6. Interpretación ejecutiva y propuestas de segmentación.
 
-##  Datasets utilizados
+## Resultados documentados en el notebook
+| Hallazgo | Resultado |
+|---|---:|
+| Edades con valor inválido -999 | 40 (1.0 % de usuarios) |
+| Fechas de registro futuras inconsistentes | 40 (1.0 % de usuarios) |
+| Duraciones nulas en eventos | 22,076 (55.2 % de eventos) |
+| Longitudes nulas en eventos | 17,896 (44.8 % de eventos) |
+| Atípicos en cantidad de mensajes | 46 (1.15 % de usuarios) |
+| Atípicos en cantidad de llamadas | 30 (0.75 % de usuarios) |
 
-El análisis se basa en datasets simulados de actividad de usuarios, que incluyen las siguientes variables principales:
+Las dos últimas categorías de campos nulos se interpretaron según el tipo de evento (llamada o texto), y no se eliminaron indiscriminadamente. Los valores atípicos de actividad se conservaron por resultar plausibles.
 
-* `id`: Identificador único de cada evento
-* `user_id`: Identificador del usuario
-* `duration`: Duración del evento
-* `length`: Longitud de la interacción (por ejemplo, texto)
-* `city`: Ciudad del usuario
-* `plan`: Tipo de plan (Básico / Premium)
-* `usage_type`: Tipo de uso (call / text)
+En el análisis exploratorio se observa que el plan Básico reúne más usuarios jóvenes y que las distribuciones de uso entre planes no muestran diferencias claras en ciertas métricas. Se propone evaluar campañas dirigidas a usuarios jóvenes para planes Premium; **no se ejecutó ni validó una campaña comercial**.
 
----
+## Evidencia técnica
+**[Abrir notebook de Jupyter con código, gráficos y conclusiones](S7%20Version-Estudiante-Project-ConnectaTel.ipynb)**
 
-##  Etapas del análisis
+[Ver notebook en GitHub](https://github.com/martinatn95-wq/conectatel-analysis/blob/main/S7%20Version-Estudiante-Project-ConnectaTel.ipynb)
 
-### 1. Exploración inicial (EDA)
+## Cómo reproducirlo
+1. Abre el notebook en Jupyter o Google Colab.
+2. Instala `pandas`, `numpy`, `matplotlib` y `seaborn`.
+3. Carga los tres CSV originales y ajusta las rutas de `pd.read_csv`.
+4. Ejecuta las celdas en orden.
 
-* Revisión de estadísticas descriptivas (`describe`)
-* Identificación de valores atípicos y distribuciones
-* Detección de valores faltantes
+**Limitaciones:** no se incluyen los CSV y no se ha repetido la ejecución de punta a punta fuera del entorno del curso. Los resultados son de un ejercicio académico con datos de práctica. Las recomendaciones son hipótesis, no mejoras medidas de negocio.
 
-### 2. Limpieza de datos
-
-* Reemplazo de valores inválidos (`-999`, `0`)
-* Tratamiento de valores nulos
-* Estandarización de variables categóricas (ej. city con valores como `?`)
-
-### 3. Detección y tratamiento de outliers
-
-* Uso del método IQR (rango intercuartílico)
-* Eliminación o limitación (capping) de valores extremos
-
-### 4. Feature Engineering
-
-* Creación de métricas por usuario:
-
-  * Número de eventos
-  * Duración promedio
-  * Longitud promedio de interacción
-
-### 5. Análisis de comportamiento
-
-* Segmentación de usuarios
-* Relación entre duración y tipo de uso
-* Comparación por tipo de plan
-
----
-
-##  Cómo ejecutar el notebook
-
-Puedes ejecutar este análisis de las siguientes formas:
-
-### Opción : Local (Jupyter Notebook)
-
-1. Clona este repositorio:
-
-```
-git clone https://github.com/martinatn95-wq/conectatel-analysis
-```
-
-
----
-
-##  Resultados clave
-
-* Identificación de datos inconsistentes (valores 0 y -999)
-* Presencia de outliers significativos en duración y longitud
-* Diferencias en comportamiento según tipo de usuario
-* Dataset estructurado a nivel evento, permitiendo análisis de engagement
-
----
-
-##  Habilidades demostradas
-
-* Limpieza y preprocesamiento de datos
-* Análisis exploratorio (EDA)
-* Detección de outliers
-* Feature engineering
-* Análisis de comportamiento de usuarios
-
----
-
-##  Notas
-
-Este proyecto forma parte de un portafolio enfocado en análisis de datos y está diseñado para simular un caso real de negocio.
-
----
+## Autor
+Martín Alejandro Toledo Nieto · [GitHub](https://github.com/martinatn95-wq) · [LinkedIn](https://www.linkedin.com/in/martin-toledo-da-cpt/)
